@@ -2,7 +2,7 @@
 
 Funcionalidade: Ver lista completa de items
     Como um usuário anônimo
-    Para que eu possa saber o que devo fazer e o que já fiz
+    Para que eu possa saber todos os items
     Eu gostaria de visualizar a lista completa de items
 
     Cenário: Lista vazia
