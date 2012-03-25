@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 from django.core.management import execute_manager
-
 import os
+import site
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+path = lambda *a: os.path.join(ROOT, *a)
+site.addsitedir(path('apps'))
 
 DJANGO_ENVIRON = os.environ.get('DJANGO_ENVIRON', None)
 
