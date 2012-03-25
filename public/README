@@ -1,0 +1,4 @@
+Django *collected* static/media assets land here.
+
+Usually you don't need to handle this folder directly,
+since Django does this automatically for you.

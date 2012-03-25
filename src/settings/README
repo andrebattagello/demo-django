@@ -1,0 +1,18 @@
+Instead of a settings.py file, we are gonna use a whole settings package.
+
+This packages contains:
+
+* base.py : Base settings, common in development and production mode
+* devel.py : Development mode specific settings
+* prod.py : Production mode specific settings
+
+* local_settings.template : If you need special environment settings on your development machine,
+    create a local_settings.py file and put this special settings there.
+    This file is a mere suggestion of what should be in a local_settings.py
+
+* secret.py : This file contains special security keys (like AWS keys, etc)
+
+
+Important:
+    local_settings.py and secret.py are not stored by git (see .gitignore on the project root)
+    for obvious reasons (local customization and security).

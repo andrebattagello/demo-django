@@ -1,0 +1,13 @@
+PIP requirements
+================
+
+First of all, update pip: `pip install -U pip`
+
+
+Use `pip install -r <filename>.txt` to install everything under <filename>.txt
+
+
+
+:base.txt: Base requirements for development and production
+:devel.txt: Development requirements
+:prod.txt: Production requirements

@@ -1,0 +1,12 @@
+-r base.txt
+
+django-debug-toolbar
+django-extensions
+
+##Testing requirements
+-e git+https://github.com/gabrielfalcao/unclebob#egg=unclebob
+-e git+https://github.com/gabrielfalcao/lettuce#egg=lettuce
+splinter==0.4.4
+#django-nose
+#twill
+#coverage

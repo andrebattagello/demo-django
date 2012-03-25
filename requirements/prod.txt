@@ -1,0 +1,4 @@
+-r base.txt
+
+-e git+https://github.com/benoitc/gunicorn.git#egg=gunicorn
+django_compressor
