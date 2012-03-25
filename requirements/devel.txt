@@ -3,10 +3,12 @@
 django-debug-toolbar
 django-extensions
 
-##Testing requirements
--e git+https://github.com/gabrielfalcao/unclebob#egg=unclebob
+## Testing requirements
+
 -e git+https://github.com/gabrielfalcao/lettuce#egg=lettuce
 splinter==0.4.4
-#django-nose
+django-nose
+pinocchio
 #twill
 #coverage
+#-e git+https://github.com/gabrielfalcao/unclebob#egg=unclebob

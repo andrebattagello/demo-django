@@ -15,16 +15,22 @@ DATABASES = {
 
 ###############################################
 ##TESTING settings
-TEST_RUNNER = 'unclebob.runners.Nose'
-import unclebob
-unclebob.take_care_of_my_tests()
+
+#unclebob settings
+#TEST_RUNNER = 'unclebob.runners.Nose'
+#import unclebob
+#unclebob.take_care_of_my_tests()
 
 #Avoid Lettuce to catch undesired apps
 LETTUCE_APPS = PROJECT_APPS
 
+#Django-nose settings
 #FIXTURE_DIRS = (os.path.join(SRC_ROOT, 'fixtures'),)
-#TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-#TEST_RUNNER="djangosanetesting.testrunner.DstNoseTestSuiteRunner"
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = ["--include=^(it|ensure|must|should|specs?|examples?|deve)",
+             "--include=(specs?(.py)?|examples?(.py)?)$",
+             '--with-spec', '--spec-color']
+
 
 #Do not hijack the stdout (useful when I want to pdb my tests)
 #NOSE_ARGS = ['-sd', '--nologcapture',]
@@ -36,6 +42,7 @@ LETTUCE_APPS = PROJECT_APPS
 #During tests use only syncdb; do not migrate
 SOUTH_TESTS_MIGRATE = False
 
+#Twill settings
 #Uncomment to more friedly twill exception display
 #DEBUG_PROPAGATE_EXCEPTIONS = True
 ###############################################
@@ -46,7 +53,9 @@ SOUTH_TESTS_MIGRATE = False
 DEVEL_APPS = (
     'django_extensions',
     'debug_toolbar',
-    'unclebob',
+
+    #testing helper apps
+    'django_nose',
     'lettuce.django',
 )
 INSTALLED_APPS += DEVEL_APPS
