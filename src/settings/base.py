@@ -54,7 +54,7 @@ MEDIA_URL = '/media/'
 ##Static assets settings
 STATIC_ROOT = os.path.join(PUBLIC_ROOT, 'static') #collect to this directory
 STATIC_URL = '/static/' #serve them from this URL
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+#ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 #search them from this directories
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
