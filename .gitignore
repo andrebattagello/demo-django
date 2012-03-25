@@ -61,6 +61,7 @@ pip-log.txt
 *.pyc
 local_settings.py
 secret.py
+harvest-echo
 
 #Development DB
 *.sqlite
