@@ -30,5 +30,5 @@ class VerListaSpec(TestCase):  # Specification
         assert_equals(response.status_code, 200)
         assert_equals(response.template_name, 'lista/ver_lista.html')
         assert len(response.context_data['lista']) > 0
-        for item in lista.itens.all():
+        for item in lista:
             assert item in response.context_data['lista']

@@ -1,23 +1,16 @@
 # -*- coding: utf-8 -*-
 from lettuce import step, world
 from lettuce.django import django_url
-from lista.models import Lista, Item
+from lista.models import Item
 
 
-def criar_lista_vazia():
-    """
-    Apenas um helper function para evitar repeticoes.
-    O motivo que eu nao estou usando o factory de mesmo nome
-    eh porque neste caso eu quero usar a Entidade real e nao um substituto.
-    """
-    lista = Lista()
-    lista.save()
-    return lista
+def cria_lista_vazia():
+    return []
 
 
 @step(u'Dado que exista uma lista vazia')
 def dado_que_exista_uma_lista_vazia(step):
-    criar_lista_vazia()
+    cria_lista_vazia()
 
 
 @step(u'Quando eu ver a lista')
@@ -32,12 +25,12 @@ def entao_eu_devo_ser_apresentado_com_texto(step, texto):
 
 @step(u'Dado que exista uma lista com os seguintes itens:')
 def dado_que_exista_uma_lista_com_os_seguintes_itens(step):
-    lista = criar_lista_vazia()
+    lista = cria_lista_vazia()
     # http://lettuce.it/tutorial/tables.html#tutorial-tables
     for item_dict in step.hashes:  # step.hashes eh uma lista de dicionarios
         item = Item(**item_dict)  # study unpacking variables (**kwargs)
-        lista.add_item(item)
-    lista.save()
+        item.save()
+        lista.append(item)
 
 
 @step(u'E eu devo ser apresentado com os seguintes itens:')

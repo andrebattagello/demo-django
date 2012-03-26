@@ -17,11 +17,7 @@ Confira mais sobre factory_boy em:
 
 """
 import factory  # importa factory_boy para me ajudar
-from lista.models import Lista, Item
-
-
-class ListaFactory(factory.Factory):
-    FACTORY_FOR = Lista
+from lista.models import Item
 
 
 class ItemFactory(factory.Factory):
@@ -29,31 +25,28 @@ class ItemFactory(factory.Factory):
 
     nome = factory.Sequence(lambda n: 'Item %s' % n)
     completo = False
-    lista_pai = factory.SubFactory(ListaFactory)
 
 
 def cria_lista_vazia():
     """
-    Cria uma lista sem nenhum elemento
+    Cria uma lista vazia
     """
-    return ListaFactory()
+    return []
 
 
-def cria_item(lista=None):
+def cria_item():
     """
     Cria um item usando ItemFactory.
-    Se algum argumento (opcional) ``lista`` for passado, use ele na construcao
     """
-    if not lista:  # nao passou nada (chegou None nesta linha)
-        return ItemFactory()  # usa SubFactory, pois nao pode ter None como FK
-    return ItemFactory(lista_pai=lista)  # usa o lista que foi passado
+    return ItemFactory()  # usa o lista que foi passado
 
 
 def cria_lista_nao_vazia():
     """
     Cria uma lista com alguns items.
     """
-    lista = ListaFactory()
-    for x in range(1, 10):  # serao 10 itens nesta lista
-        cria_item(lista=lista)  # Passa para o arg opcional lista, a var lista
+    lista = []
+    for x in range(0, 10):  # serao 10 itens nesta lista
+        item = cria_item()  # Passa para o arg opcional lista, a var lista
+        lista.append(item)
     return lista
