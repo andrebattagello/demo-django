@@ -9,7 +9,7 @@ from factories import cria_lista_nao_vazia, cria_lista_vazia
 from lista import views
 
 
-class VerListaSpec(TestCase):
+class VerListaSpec(TestCase):  # Specification
     """
     Comportamento da view ver_lista
     """

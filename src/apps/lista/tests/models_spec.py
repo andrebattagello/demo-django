@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""
+Contém Specifications de teste
+que descrevem o comportamento dos models deste app
+
+"""
 from django.test import TestCase
 # I usually use assert_equals instead of plain assert
 # to have a comparison between expected and real on assertion error
@@ -7,7 +12,7 @@ from lista.models import Lista, Item
 from factories import cria_item, cria_lista_nao_vazia, cria_lista_vazia
 
 
-class ListaSpec(TestCase):
+class ListaSpec(TestCase):  # Specification
     """
     Comportamento do model Lista
     """
@@ -26,7 +31,7 @@ class ListaSpec(TestCase):
         assert item in self.lista.itens.all()
 
 
-class ItemSpec(TestCase):
+class ItemSpec(TestCase):  # Specification
     """
     Comportamento do model Item
     """
