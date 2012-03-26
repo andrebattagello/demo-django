@@ -6,5 +6,12 @@
 
 
 {% block container %}
-	Lista Vazia
+{% if lista %}
+    Lista contém {{ lista|length }} itens.
+{% else %}
+    Lista Vazia.
+{% endif %}
+    {% for item in lista %}
+        {{ item.nome }} | {{ item.completo }}
+    {% endfor %}
 {% endblock %}
