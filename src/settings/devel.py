@@ -30,6 +30,8 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = ["--include=^(it|ensure|must|should|specs?|examples?|deve)",
              "--include=(specs?(.py)?|examples?(.py)?)$",
              '--with-spec', '--spec-color']
+#uncomment below to activate code testing coverage
+NOSE_ARGS.extend(['--cover-package=src.apps', '--with-coverage'])
 
 
 #Do not hijack the stdout (useful when I want to pdb my tests)
@@ -81,4 +83,5 @@ DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False}
 try:
     from local_settings import *
 except:
+    pass
     pass

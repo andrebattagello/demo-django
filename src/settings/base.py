@@ -13,16 +13,17 @@ SITE_ID = 1
 
 # Make this unique, and don't share it with anybody.
 #With django-extensions generate a new one using `manage.py generate_secret_key`
-SECRET_KEY = 'your-secret-key'
+SECRET_KEY = '^squqf435q$o(vi*jbci*3h+kwh%9tzhk#f-d+o@+z-bszv=1z'
 
 ROOT_URLCONF = 'urls'
 
 
 ###############################################
 ##General Project information
-PROJECT_NAME = 'your-project-name'
+PROJECT_NAME = 'todolist'
 PROJECT_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', '..')
 SRC_ROOT = os.path.join(PROJECT_ROOT, 'src')
+APPS_ROOT = os.path.join(SRC_ROOT, 'apps')
 DOCS_ROOT = os.path.join(PROJECT_ROOT, 'docs')
 PUBLIC_ROOT = os.path.join(PROJECT_ROOT, 'public')
 TEMPLATES_ROOT = os.path.join(PROJECT_ROOT, 'templates')
@@ -33,13 +34,10 @@ TEMPLATES_ROOT = os.path.join(PROJECT_ROOT, 'templates')
 ##Language support settings
 USE_I18N = True
 USE_L10N = True
-TIME_ZONE = 'America/Chicago'
-LANGUAGE_CODE = 'en-us'
-#TIME_ZONE = 'America/Sao_Paulo'
-#LANGUAGE_CODE = 'pt-br'
-#LANGUAGES = (
-    #('pt-br',_('Brazilian Portuguese')),
-#)
+#TIME_ZONE = 'America/Chicago'
+#LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'America/Sao_Paulo'
+LANGUAGE_CODE = 'pt-br'
 ###############################################
 
 
