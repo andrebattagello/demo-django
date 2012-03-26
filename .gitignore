@@ -13,6 +13,12 @@ todo
 Session.vim
 .ropeproject
 .project
+
+
+#-----------------------#
+###Unix.gitignore
+#-----------------------#
+.db-journal
 #-----------------------#
 
 
