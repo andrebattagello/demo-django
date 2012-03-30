@@ -31,6 +31,7 @@ def dado_que_exista_uma_lista_com_os_seguintes_itens(step):
         item = Item(**item_dict)  # study unpacking variables (**kwargs)
         item.save()
         lista.append(item)
+    world.lista = lista
 
 
 @step(u'E eu devo ser apresentado com os seguintes itens:')

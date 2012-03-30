@@ -1,7 +1,7 @@
 # language: pt-br
 
 Funcionalidade: Ver lista completa de items
-    Como um usuário anônimo
+    Como um usuário
     Para que eu possa saber todos os items
     Eu gostaria de visualizar a lista completa de items
 
