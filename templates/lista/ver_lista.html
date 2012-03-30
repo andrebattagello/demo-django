@@ -12,6 +12,6 @@
     Lista Vazia.
 {% endif %}
     {% for item in lista %}
-        {{ item.nome }} | {{ item.completo }}
+        <a href="{{ item.get_absolute_url }}">{{ item.nome }}</a> ==> {{ item.completo_texto }}
     {% endfor %}
 {% endblock %}
