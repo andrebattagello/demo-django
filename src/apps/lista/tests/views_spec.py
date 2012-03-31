@@ -77,3 +77,10 @@ class AdicionarItemSpec(TestCase):
         response = views.adicionar_item(request)
         assert_get(response, 'lista/adicionar_item.html')
         assert_equals(response.context_data['form'].__class__, ItemNewForm)
+
+    def deve_saber_adicionar_um_novo_item_a_lista(self):
+        nome = 'Item1'
+        post_data = {'nome': nome}
+        response = self.client.post('/lista/adicionar/', post_data)
+        assert_post(response, '/lista/')
+        assert Item.objects.get(nome=nome)
