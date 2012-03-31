@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.test.client import RequestFactory
 from factories import cria_lista_nao_vazia, cria_lista_vazia, cria_item
 from lista import views
-from lista.forms import ItemForm
+from lista.forms import ItemForm, ItemNewForm
 from lista.models import Item
 # I usually use assert_equals instead of plain assert
 # to have a comparison between expected and real on assertion error
@@ -66,3 +66,14 @@ class VerDetalhesItemSpec(TestCase):  # Specification
         # refresh da nossa instancia na memoria com as atualizacoes no DB
         self.item = Item.objects.get(id=self.item.id)
         assert self.item.completo is False
+
+
+class AdicionarItemSpec(TestCase):
+    """
+    Comportamento da view adicionar_item
+    """
+    def deve_saber_apresentar_a_pagina_corretamente(self):
+        request = RequestFactory().get('/lista/adicionar')
+        response = views.adicionar_item(request)
+        assert_get(response, 'lista/adicionar_item.html')
+        assert_equals(response.context_data['form'].__class__, ItemNewForm)
