@@ -4,11 +4,11 @@ from lista import views
 
 urlpatterns = patterns('',
 
-    url(r'^(?P<item_id>\w+)/$',
+    url(r'^(?P<item_id>\d+)/$',
         views.ver_detalhes_item,
         name='ver_detalhes_item'),
 
-    url(r'^adicionar/$',
+    url(r'^adicionar_item/$',
         views.adicionar_item,
         name='adicionar_item'),
 
