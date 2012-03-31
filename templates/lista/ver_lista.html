@@ -1,8 +1,6 @@
 {% extends "lista/base.html" %}
 
-{% block title %}
-	Ver Lista
-{% endblock %}
+{% block title %} Ver Lista {% endblock %}
 
 
 {% block container %}
@@ -11,7 +9,11 @@
 {% else %}
     Lista Vazia.
 {% endif %}
-    {% for item in lista %}
-        <a href="{{ item.get_absolute_url }}">{{ item.nome }}</a> ==> {{ item.completo_texto }}
-    {% endfor %}
+
+<a href="{% url adicionar_item %}">Adicionar item</a>
+
+{% for item in lista %}
+    <a href="{{ item.get_absolute_url }}">{{ item.nome }}</a> ==> {{ item.completo_texto }}
+{% endfor %}
+
 {% endblock %}

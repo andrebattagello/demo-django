@@ -7,6 +7,9 @@ urlpatterns = patterns('',
     url(r'^(?P<item_id>\w+)/$', views.ver_detalhes_item,
        name='ver_detalhes_item'),
 
+    url(r'^adicionar/$', views.adicionar_item,
+       name='adicionar_item'),
+
     url(r'^$', views.ver_lista,
        name='ver_lista'),
 )
