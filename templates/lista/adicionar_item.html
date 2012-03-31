@@ -1,0 +1,14 @@
+{% extends "lista/base.html" %}
+
+{% block title %} Adicionar item {% endblock %}
+
+{% block container %}
+
+<form action="" method="POST"> {% csrf_token %}
+		{{ form.as_p }}
+
+    <p><input type="submit" value="Salvar"/></p>
+</form>
+
+{% endblock %}
+

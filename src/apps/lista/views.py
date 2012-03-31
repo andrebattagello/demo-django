@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.template.response import TemplateResponse
 from lista.models import Item
-from lista.forms import ItemForm
+from lista.forms import ItemForm, ItemNewForm
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -30,6 +30,16 @@ def ver_detalhes_item(request, item_id):
         form = ItemForm(instance=item)
 
     context = {'form': form}  # GET or Error in form validation
+    return TemplateResponse(request,
+                           template_name,
+                           context)
+
+
+def adicionar_item(request):
+    template_name = 'lista/adicionar_item.html'
+    form = ItemNewForm()
+    context = {'form': form}
+
     return TemplateResponse(request,
                            template_name,
                            context)
