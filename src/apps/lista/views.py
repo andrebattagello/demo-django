@@ -37,9 +37,16 @@ def ver_detalhes_item(request, item_id):
 
 def adicionar_item(request):
     template_name = 'lista/adicionar_item.html'
-    form = ItemNewForm()
-    context = {'form': form}
 
+    if request.method == 'POST':
+        form = ItemNewForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('ver_lista'))
+    else:
+        form = ItemNewForm()
+
+    context = {'form': form}
     return TemplateResponse(request,
                            template_name,
                            context)
