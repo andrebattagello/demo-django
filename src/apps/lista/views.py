@@ -22,14 +22,14 @@ def ver_detalhes_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
 
     if request.method == 'POST':
-        form = ItemForm(instance=item, data=request.POST)
+        form = ItemForm(instance=item, data=request.POST)  # POST form
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('ver_lista'))
     else:  # GET
         form = ItemForm(instance=item)
 
-    context = {'form': form}  # GET or Error in form validation
+    context = {'form': form}  # GET form or form w/ error validation
     return TemplateResponse(request,
                            template_name,
                            context)
