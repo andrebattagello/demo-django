@@ -10,20 +10,20 @@ written intentionally to show up some best Django practices and cool 3rd party a
 How to Run
 ==========
 
-cd project/requirements
-pip install -r base.txt
-
-cd project/src
-python manage.py syncdb
-python manage.py runserver
-Open http://localhost:8000/lista
+* cd project/requirements
+* pip install -r base.txt
+ 
+* cd project/src
+* python manage.py syncdb
+* python manage.py runserver
+* Open http://localhost:8000/lista
 
 
 How to Run the tests
 ====================
 
-cd project/requirements
-pip install -r devel.txt
+* cd project/requirements
+* pip install -r devel.txt
 
 :Behaviour Unit tests: python manage.py test
 
