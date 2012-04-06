@@ -11,4 +11,4 @@ class ItemForm(forms.ModelForm):
 class ItemNewForm(forms.ModelForm):
     class Meta:
         model = Item
-        exclude_fields = ['completo']
+        exclude = ['completo']
