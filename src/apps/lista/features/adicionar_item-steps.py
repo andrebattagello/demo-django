@@ -13,5 +13,5 @@ def quando_eu_adicionar_o_item_name_a_lista(step, name):
 
 @step(u'Então eu devo ser apresentado com os seguintes itens:')
 def entao_eu_devo_ser_apresentado_com_os_seguintes_itens(step):
-    for item in step.hashes:  # step.hashes eh uma lista de dicionarios
-        assert item['nome'] in world.browser.html
+    from utils import is_step_items_present
+    assert is_step_items_present(step)

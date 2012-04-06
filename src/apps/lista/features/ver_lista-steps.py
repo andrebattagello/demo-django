@@ -20,7 +20,8 @@ def quando_eu_ver_a_lista(step):
 
 @step(u'Então eu devo ser apresentado com "([^"]*)"')
 def entao_eu_devo_ser_apresentado_com_texto(step, texto):
-    assert texto in world.browser.html
+    assert world.browser.is_text_present(texto)
+    #assert texto in world.browser.html
 
 
 @step(u'Dado que exista uma lista com os seguintes itens:')
@@ -36,5 +37,5 @@ def dado_que_exista_uma_lista_com_os_seguintes_itens(step):
 
 @step(u'E eu devo ser apresentado com os seguintes itens:')
 def e_eu_devo_ser_apresentado_com_os_seguintes_itens(step):
-    for item in step.hashes:  # step.hashes eh uma lista de dicionarios
-        assert item['nome'] in world.browser.html
+    from utils import is_step_items_present
+    assert is_step_items_present(step)
