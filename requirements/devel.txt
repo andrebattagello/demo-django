@@ -6,8 +6,8 @@ django-extensions
 
 ## Testing requirements
 
--e git+https://github.com/gabrielfalcao/lettuce#egg=lettuce
-splinter==0.4.4
+#-e git+https://github.com/gabrielfalcao/lettuce#egg=lettuce
+#splinter==0.4.4
 django-nose
 pinocchio
 coverage

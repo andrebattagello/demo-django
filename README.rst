@@ -11,7 +11,7 @@ How to Run
 ==========
 
 * cd project/requirements
-* pip install -r base.txt
+* pip install -r devel.txt
  
 * cd project/src
 * python manage.py syncdb
@@ -25,9 +25,17 @@ How to Run the tests
 * cd project/requirements
 * pip install -r devel.txt
 
-:Behaviour Unit tests: python manage.py test
+Behaviour Unit tests
+~~~~~~~~~~~~~~~~~~~~
 
-:Acceptance tests: python manage.py harvest --settings=settings.lettuce
+python manage.py test
+
+Acceptance tests
+~~~~~~~~~~~~~~~~
+
+* pip install splinter
+* pip install lettuce
+* python manage.py harvest --settings=settings.lettuce
 
 
 Tech Stack
@@ -35,10 +43,23 @@ Tech Stack
 
 Currently using:
 
-Django 1.3.1
+Django
+Bootstrap CSS
 
 Testing stack:
     * Lettuce + Splinter to Acceptance tests
     * Django TestCase to Behaviour unit tests
     * Factory_Boy over traditional fixtures
     * Django Nose to find out my tests
+
+
+Common issues
+=============
+
+Sometimes, lxml can be tricky to install
+
+:Windows: http://pypi.python.org/pypi/lxml/2.3
+:Linux: 
+    * sudo apt-get install libxml2-dev
+    * sudo apt-get install libxslt1-dev
+    * sudo apt-get install python2.7-dev
