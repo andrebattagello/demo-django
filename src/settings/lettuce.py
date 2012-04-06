@@ -10,6 +10,11 @@ DATABASES = {
     }
 }
 
+INSTALLED_APPS += ('lettuce.django',)
+
+#Avoid Lettuce to catch undesired apps
+LETTUCE_APPS = PROJECT_APPS
+
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
 }

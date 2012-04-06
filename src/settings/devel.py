@@ -21,8 +21,6 @@ DATABASES = {
 #import unclebob
 #unclebob.take_care_of_my_tests()
 
-#Avoid Lettuce to catch undesired apps
-LETTUCE_APPS = PROJECT_APPS
 
 #Django-nose settings
 #FIXTURE_DIRS = (os.path.join(SRC_ROOT, 'fixtures'),)
@@ -58,7 +56,6 @@ DEVEL_APPS = (
 
     #testing helper apps
     'django_nose',
-    'lettuce.django',
 )
 INSTALLED_APPS += DEVEL_APPS
 ###############################################
