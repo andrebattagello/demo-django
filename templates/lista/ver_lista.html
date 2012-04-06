@@ -4,16 +4,33 @@
 
 
 {% block container %}
-{% if lista %}
-    Lista contém {{ lista|length }} itens.
-{% else %}
-    Lista Vazia.
-{% endif %}
 
-<a href="{% url adicionar_item %}">Adicionar item</a>
+    <div class="hero-unit">
 
-{% for item in lista %}
-    <a href="{{ item.get_absolute_url }}">{{ item.nome }}</a> ==> {{ item.completo_texto }}
-{% endfor %}
+        <h2>
+            {% if lista %}
+            Lista contém <span class="important-number">{{ lista|length }}</span> itens.
+            {% else %}
+            Lista Vazia.
+            {% endif %}
+        </h2>
+
+        <p>
+        <a href="{% url adicionar_item %}" class="btn btn-primary btn-large" rel="tooltip" title="Colocar um novo item na Lista">Adicionar item</a>
+        </p>
+
+    </div>
+
+
+<ul class="lista">
+    {% for item in lista %}
+        <li>
+            <a href="{{ item.get_absolute_url }}">{{ item.nome }}</a>
+                ==> {{ item.completo_texto }}
+        </li>
+    {% endfor %}
+</ul>
+
 
 {% endblock %}
+
